@@ -14,8 +14,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>dmp_printer_module.c</itemPath>
-      <itemPath>printer_config.c</itemPath>
-      <itemPath>strip_processing.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -73,10 +71,6 @@
           <output>${TESTDIR}/TestFiles/f1</output>
         </linkerTool>
       </folder>
-      <item path="printer_config.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="strip_processing.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="tests/printer_module_tests.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
@@ -126,10 +120,6 @@
           <output>${TESTDIR}/TestFiles/f1</output>
         </linkerTool>
       </folder>
-      <item path="printer_config.c" ex="false" tool="0" flavor2="0">
-      </item>
-      <item path="strip_processing.c" ex="false" tool="0" flavor2="0">
-      </item>
       <item path="tests/printer_module_tests.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>

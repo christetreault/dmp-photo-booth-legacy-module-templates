@@ -13,7 +13,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>camera_module.c</itemPath>
+      <itemPath>dmp_camera_module.c</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -55,7 +55,7 @@
           <commandLine>`pkg-config --libs glib-2.0 libgphoto2`</commandLine>
         </linkerTool>
       </compileType>
-      <item path="camera_module.c" ex="false" tool="0" flavor2="0">
+      <item path="dmp_camera_module.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="dmp_camera_module.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -93,7 +93,7 @@
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdmp_pb_camera_module.${CND_DLIB_EXT}</output>
         </linkerTool>
       </compileType>
-      <item path="camera_module.c" ex="false" tool="0" flavor2="0">
+      <item path="dmp_camera_module.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="dmp_camera_module.h" ex="false" tool="3" flavor2="0">
       </item>

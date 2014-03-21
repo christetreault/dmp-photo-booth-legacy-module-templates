@@ -35,10 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/dmp_trigger_module.o \
-	${OBJECTDIR}/lifecycle.o \
-	${OBJECTDIR}/serial_io.o \
-	${OBJECTDIR}/trigger_config.o
+	${OBJECTDIR}/dmp_trigger_module.o
 
 # Test Directory
 TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
@@ -76,21 +73,6 @@ ${OBJECTDIR}/dmp_trigger_module.o: dmp_trigger_module.c
 	${RM} $@.d
 	$(COMPILE.c) -g `pkg-config --cflags gthread-2.0` -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/dmp_trigger_module.o dmp_trigger_module.c
 
-${OBJECTDIR}/lifecycle.o: lifecycle.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.c) -g `pkg-config --cflags gthread-2.0` -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/lifecycle.o lifecycle.c
-
-${OBJECTDIR}/serial_io.o: serial_io.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.c) -g `pkg-config --cflags gthread-2.0` -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/serial_io.o serial_io.c
-
-${OBJECTDIR}/trigger_config.o: trigger_config.c 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.c) -g `pkg-config --cflags gthread-2.0` -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/trigger_config.o trigger_config.c
-
 # Subprojects
 .build-subprojects:
 
@@ -118,45 +100,6 @@ ${OBJECTDIR}/dmp_trigger_module_nomain.o: ${OBJECTDIR}/dmp_trigger_module.o dmp_
 	    $(COMPILE.c) -g `pkg-config --cflags gthread-2.0` -fPIC  -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/dmp_trigger_module_nomain.o dmp_trigger_module.c;\
 	else  \
 	    ${CP} ${OBJECTDIR}/dmp_trigger_module.o ${OBJECTDIR}/dmp_trigger_module_nomain.o;\
-	fi
-
-${OBJECTDIR}/lifecycle_nomain.o: ${OBJECTDIR}/lifecycle.o lifecycle.c 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/lifecycle.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.c) -g `pkg-config --cflags gthread-2.0` -fPIC  -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/lifecycle_nomain.o lifecycle.c;\
-	else  \
-	    ${CP} ${OBJECTDIR}/lifecycle.o ${OBJECTDIR}/lifecycle_nomain.o;\
-	fi
-
-${OBJECTDIR}/serial_io_nomain.o: ${OBJECTDIR}/serial_io.o serial_io.c 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/serial_io.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.c) -g `pkg-config --cflags gthread-2.0` -fPIC  -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/serial_io_nomain.o serial_io.c;\
-	else  \
-	    ${CP} ${OBJECTDIR}/serial_io.o ${OBJECTDIR}/serial_io_nomain.o;\
-	fi
-
-${OBJECTDIR}/trigger_config_nomain.o: ${OBJECTDIR}/trigger_config.o trigger_config.c 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/trigger_config.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.c) -g `pkg-config --cflags gthread-2.0` -fPIC  -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/trigger_config_nomain.o trigger_config.c;\
-	else  \
-	    ${CP} ${OBJECTDIR}/trigger_config.o ${OBJECTDIR}/trigger_config_nomain.o;\
 	fi
 
 # Run Test Targets

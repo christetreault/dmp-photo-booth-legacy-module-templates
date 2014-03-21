@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/camera_module.o
+	${OBJECTDIR}/dmp_camera_module.o
 
 
 # C Compiler Flags
@@ -62,10 +62,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdmp_pb_camera_module.${CND_DLIB_EX
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdmp_pb_camera_module.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} `pkg-config --libs glib-2.0 libgphoto2` -shared -fPIC
 
-${OBJECTDIR}/camera_module.o: camera_module.c 
+${OBJECTDIR}/dmp_camera_module.o: dmp_camera_module.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.c) -g -I. -I. `pkg-config --cflags glib-2.0 libgphoto2` -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/camera_module.o camera_module.c
+	$(COMPILE.c) -g -I. -I. `pkg-config --cflags glib-2.0 libgphoto2` -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/dmp_camera_module.o dmp_camera_module.c
 
 # Subprojects
 .build-subprojects:
