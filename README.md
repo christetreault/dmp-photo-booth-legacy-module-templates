@@ -1,4 +1,4 @@
 dmp-photo-booth-modules
 =======================
 
-Extra modules for DMP Photo Booth
+This repository contains stubs, in C, for each DMP Photo Booth module type. Feel free to use these as the basis for your DMP Photo Booth modules!
