@@ -84,7 +84,6 @@
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
-          <commandLine>`pkg-config --cflags glib-2.0 MagickWand gthread-2.0` `cups-config --cflags`</commandLine>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>

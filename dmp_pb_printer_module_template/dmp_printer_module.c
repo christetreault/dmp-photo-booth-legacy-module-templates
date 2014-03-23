@@ -1,7 +1,7 @@
 #include "dmp_printer_module.h"
 
 int (*console_write)(const char * message);
-void (*status_handler)(gint status);
+void (*status_handler)(int status);
 
 int dmp_pm_install_status_handler(void (*sh)(int status))
 {

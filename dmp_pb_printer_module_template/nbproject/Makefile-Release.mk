@@ -45,7 +45,7 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f1
 
 # C Compiler Flags
-CFLAGS=`pkg-config --cflags glib-2.0 MagickWand gthread-2.0` `cups-config --cflags` 
+CFLAGS=
 
 # CC Compiler Flags
 CCFLAGS=
@@ -71,7 +71,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libdmp_pb_printer_module_template.${C
 ${OBJECTDIR}/dmp_printer_module.o: dmp_printer_module.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.c) -O2 `pkg-config --cflags glib-2.0 MagickWand gthread-2.0` `cups-config --cflags` -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/dmp_printer_module.o dmp_printer_module.c
+	$(COMPILE.c) -O2 -fPIC  -MMD -MP -MF $@.d -o ${OBJECTDIR}/dmp_printer_module.o dmp_printer_module.c
 
 # Subprojects
 .build-subprojects:
@@ -86,7 +86,7 @@ ${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/printer_module_tests.o ${OBJECTFILES:%
 ${TESTDIR}/tests/printer_module_tests.o: tests/printer_module_tests.c 
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} $@.d
-	$(COMPILE.c) -O2 -I. -I. `pkg-config --cflags glib-2.0 MagickWand gthread-2.0` `cups-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/printer_module_tests.o tests/printer_module_tests.c
+	$(COMPILE.c) -O2 -I. -I. -MMD -MP -MF $@.d -o ${TESTDIR}/tests/printer_module_tests.o tests/printer_module_tests.c
 
 
 ${OBJECTDIR}/dmp_printer_module_nomain.o: ${OBJECTDIR}/dmp_printer_module.o dmp_printer_module.c 
@@ -97,7 +97,7 @@ ${OBJECTDIR}/dmp_printer_module_nomain.o: ${OBJECTDIR}/dmp_printer_module.o dmp_
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.c) -O2 `pkg-config --cflags glib-2.0 MagickWand gthread-2.0` `cups-config --cflags` -fPIC  -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/dmp_printer_module_nomain.o dmp_printer_module.c;\
+	    $(COMPILE.c) -O2 -fPIC  -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/dmp_printer_module_nomain.o dmp_printer_module.c;\
 	else  \
 	    ${CP} ${OBJECTDIR}/dmp_printer_module.o ${OBJECTDIR}/dmp_printer_module_nomain.o;\
 	fi
